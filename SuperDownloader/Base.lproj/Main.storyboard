@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Songs List View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="SongsListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="SongsListViewController" customModule="SuperDownloader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="MtZ-Sd-sKh">
+                                <rect key="frame" x="0.0" y="124" width="414" height="730"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="PtF-CF-Zdt"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="B3O-je-Gi5"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="drj-DY-hhl">
+                                <rect key="frame" x="100" y="68" width="214" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="startLoadingAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="f96-2p-qIh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="MtZ-Sd-sKh" secondAttribute="bottom" constant="8" id="R0I-xl-BWE"/>
+                            <constraint firstItem="drj-DY-hhl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="aUy-KL-OJq"/>
+                            <constraint firstItem="drj-DY-hhl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="c7j-37-bx4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="drj-DY-hhl" secondAttribute="trailing" constant="100" id="e1o-O0-RPM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MtZ-Sd-sKh" secondAttribute="trailing" id="kEb-QW-hli"/>
+                            <constraint firstItem="MtZ-Sd-sKh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="mcC-OG-emo"/>
+                            <constraint firstItem="MtZ-Sd-sKh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="t95-0i-fGm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="aCo-O0-z0W"/>
+                    <connections>
+                        <outlet property="startLoadingButton" destination="drj-DY-hhl" id="9AH-cM-77E"/>
+                        <outlet property="tableView" destination="MtZ-Sd-sKh" id="Qpg-cL-FVm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928.98550724637687" y="78.348214285714278"/>
+        </scene>
+        <!--Song Details View Controller-->
+        <scene sceneID="MFA-Yh-ypw">
+            <objects>
+                <viewController storyboardIdentifier="SongDetailsViewController" id="fmu-9I-nkq" customClass="SongDetailsViewController" customModule="SuperDownloader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fft-23-CvZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGE-mT-b18">
+                                <rect key="frame" x="186" y="166" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SDp-BX-SYm">
+                                <rect key="frame" x="186" y="258" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d97-9c-ta5">
+                                <rect key="frame" x="186" y="352" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wtm-pi-f3Q"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SDp-BX-SYm" firstAttribute="top" secondItem="qGE-mT-b18" secondAttribute="bottom" constant="71" id="ECO-GA-D6P"/>
+                            <constraint firstItem="SDp-BX-SYm" firstAttribute="centerX" secondItem="qGE-mT-b18" secondAttribute="centerX" id="IuG-hN-IpD"/>
+                            <constraint firstItem="d97-9c-ta5" firstAttribute="top" secondItem="SDp-BX-SYm" secondAttribute="bottom" constant="73" id="g4R-wh-g6W"/>
+                            <constraint firstItem="d97-9c-ta5" firstAttribute="centerX" secondItem="qGE-mT-b18" secondAttribute="centerX" id="rKD-uo-ey8"/>
+                            <constraint firstItem="qGE-mT-b18" firstAttribute="top" secondItem="wtm-pi-f3Q" secondAttribute="top" constant="122" id="tgr-2l-cvS"/>
+                            <constraint firstItem="qGE-mT-b18" firstAttribute="centerX" secondItem="fft-23-CvZ" secondAttribute="centerX" id="wZ4-GG-BQc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="artistName" destination="SDp-BX-SYm" id="kkZ-sl-Mty"/>
+                        <outlet property="songName" destination="qGE-mT-b18" id="QtZ-cb-VPx"/>
+                        <outlet property="url" destination="d97-9c-ta5" id="txl-La-v5v"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PE2-gK-kGs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2139.130434782609" y="64.955357142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
