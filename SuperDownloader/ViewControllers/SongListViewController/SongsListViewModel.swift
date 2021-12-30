@@ -10,7 +10,7 @@ import Foundation
 // 100 MB example
 //"http://212.183.159.230/100MB.zip"
 
-protocol SongsListViewModelDelegate {
+protocol SongsListViewModelDelegate: AnyObject {
     func didFinishLoadingSongs()
 }
 
@@ -32,7 +32,7 @@ final class SongsListViewModel {
     
     var cellViewModels = [SongCellViewModel]()
     var status: LoadingStatus = .notStarted
-    var delegate: SongsListViewModelDelegate?
+    weak var delegate: SongsListViewModelDelegate?
 
     private var loadedSongs = 0
 
